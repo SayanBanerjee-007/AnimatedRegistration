@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Poppins:wght@200;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  background: radial-gradient(
+      circle at -8.9% 51.2%,
+      rgb(255, 124, 0) 0%,
+      rgb(255, 124, 0) 15.9%,
+      rgb(255, 163, 77) 15.9%,
+      rgb(255, 163, 77) 24.4%,
+      rgb(19, 30, 37) 24.5%,
+      rgb(19, 30, 37) 66%
+    )
+    no-repeat center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow: auto;
+}
+.notification {
+  position: absolute;
+  top: 0;
+  width: 315px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid rgb(255, 163, 77);
+  box-shadow: inset 0 0 10px rgba(255, 163, 77, 0.589);
+  border-radius: 5px;
+  background: transparent;
+  color: rgb(249, 120, 0);
+  transform: scale(0.1);
+  visibility: hidden;
+  transition: transform 0.5s,top .5s;
+}
+.visible{
+  visibility: visible;
+  transform: scale(1);
+  top: 5%;
+}
+.notification .content {
+  display: flex;
+  justify-content: space-around;
+}
+#alert-icon,
+#cross {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.notification .popup-btn {
+  border-radius: 0 3px 3px 0 ;
+  background-color: rgb(247, 238, 220);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  padding: 1px;
+}
+.notification .popup-btn ion-icon {
+  height: 40px;
+  width: 40px;
+}
+.notification .popup-btn ion-icon:hover {
+  color: red;
+}
+.main-container {
+  position: absolute;
+  top: 20%;
+  width: 350px;
+  height: 500px;
+}
+.container {
+  position: absolute;
+  top: 0;
+  width: 350px;
+  height: 500px;
+  background: rgba(0, 0, 0.75);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 32px;
+  overflow: hidden;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  height: 650px;
+  width: 650px;
+  background: conic-gradient(transparent, transparent, transparent, #d400d4);
+  animation: animate 4s linear infinite;
+  animation-delay: -2s;
+}
+.container::after {
+  content: "";
+  position: absolute;
+  height: 650px;
+  width: 650px;
+  background: conic-gradient(transparent, transparent, transparent, #00cfff);
+  animation: animate 4s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.image-layer {
+  position: absolute;
+  inset: 5px;
+  background-color: #0c1022;
+  z-index: 1;
+  border-radius: 16px;
+}
+.image-layer form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.image-layer form h2 {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  padding: auto;
+}
+form .input-box {
+  position: relative;
+  border-bottom: 2px solid #fff;
+}
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 35px 0 5px;
+}
+.input-box label {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.5s;
+}
+input:focus ~ label,
+input:valid ~ label {
+  top: -5px;
+  color: aquamarine;
+}
+.red {
+  color: red;
+}
+.green {
+  color: rgb(1, 255, 1);
+}
+.group {
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+.group a,
+span {
+  color: #fff;
+  font-weight: 500;
+}
+.group span {
+  font-size: 0.8rem;
+}
+.group a {
+  text-decoration: underline;
+  text-decoration-style: double;
+  text-decoration-color: #21d118;
+}
+.group a:hover {
+  color: aquamarine;
+}
+form button {
+  height: 40px;
+  width: 90px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+}
+form button:hover {
+  color: #fff;
+  background-color: #0c1022;
+  border: 2px solid #fff;
+}
