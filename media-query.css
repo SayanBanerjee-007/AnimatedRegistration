@@ -1,0 +1,35 @@
+@media screen and (max-width: 400px) {
+    body{
+    --primary-size : 0.8rem;
+    }
+    .notification{
+        width: 90%;
+    }
+    .notification .content{
+        font-size: var(--primary-size);
+    }
+    .container{
+        width: 95%;
+    }
+    .input-box label{
+        font-size: var(--primary-size);
+    }
+    .group span{
+        font-size: 0.6rem;
+    }
+    .group a{
+        font-size: 0.7rem;        
+    }
+}
+
+@media screen and (max-width:270px){
+    body{
+        --primary-size : 0.6rem;
+        }
+    .notification .content{
+        font-size: var(--primary-size);
+    }
+    .input-box label{
+        font-size: var(--primary-size);
+    }
+}

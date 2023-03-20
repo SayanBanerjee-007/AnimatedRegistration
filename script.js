@@ -100,6 +100,5 @@ btn.addEventListener("click", (event) => {
   popup.classList.add('visible');
 });
 popupBtn.addEventListener("click", (event) => { 
-  console.log('clicked');
   popup.classList.remove('visible');
 })
